@@ -17,10 +17,8 @@ class XmlToCsvController extends Controller
             return response()->json(['message' => 'Не удалось открыть XML'], 500);
         }
 
-        // Имя файла
+       
         $csvFileName = storage_path('app/offers.csv');
-
-        // Открываем CSV-файл
         $csvFile = fopen($csvFileName, "w");
 
         // Заголовки столбцов

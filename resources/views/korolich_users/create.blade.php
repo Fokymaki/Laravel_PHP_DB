@@ -28,7 +28,7 @@
           <input type="password" name="password" required><br>
     
         <label>Фото:</label>
-          <input type="file" name="photo"><br>
+          <input type="file" id="photo"  name="photo"><br>
     
         <button type="submit">Добавить</button>
     </form>

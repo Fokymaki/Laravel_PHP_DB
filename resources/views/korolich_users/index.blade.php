@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>Список пользователей</h1>
-    <a href="{{ route('korolich_users.create') }}">Добавить пользователя</a>
+    <a href="{{ route('korolich_users.create') }}"> Добавить пользователя</a>
     <table border="1" cellpadding="10" cellspacing="0">
         <thead>
             <tr>
@@ -32,7 +32,7 @@
                 <td>{{ $user->username }}</td>
                 <td>
                     @if($user->photo)
-                        <img src="{{ asset('storage/' . $user->photo) }}" width="50" alt="Фото">
+                        <img src="{{ asset( "storage/".$user->photo) }}" width="100" height="100" alt="Фото">
                     @else
                         Нет фото
                     @endif

@@ -14,7 +14,6 @@
     @endif
     <form action="{{ route('korolich_users.update', $user->id) }}" method="POST">
         @csrf
-        @method('PUT')
         
         <label for="full_name">ФИО:</label>
         <input type="text" id="full_name" name="full_name" value="{{ old('full_name', $user->full_name) }}" required>
@@ -35,6 +34,19 @@
         <label for="username">Логин:</label>
         <input type="text" id="username" name="username" value="{{ old('username', $user->username) }}" required>
         <br>
+
+        <label for="photo">Фото:</label>
+        <input type="file" id="photo"  name="photo">
+        <br>
+
+        @if($user->photo)
+            <p>Текущее фото:</p>
+            <img src="{{ asset('storage/'.$user->photo) }}" width="100">
+        @else
+            <p>Нет фото</p>
+        @endif
+        <br>
+
 
         <button type="submit">Сохранить изменения</button>
     </form>
