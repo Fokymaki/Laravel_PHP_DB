@@ -70,13 +70,12 @@ class KorolichUserController extends Controller
         
         public function update(Request $request,$id)
         {
-            $pathPhoto = null;
-            $user = KorolichUser::find($id);
-            Log::info($user);
-            //dd($request->all());
             
-            $photoPath = null;
-            if ($request->photo) {
+            $user = KorolichUser::find($id);
+            $photoPath = $user->photo;
+            Log::info($user);
+
+            if ($request->hasFile('photo')) {
                 //dd($request->photo);
                 if($user->photo)
                 {

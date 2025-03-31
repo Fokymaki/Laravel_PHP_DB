@@ -36,7 +36,7 @@
         <br>
 
         <label>Фото:</label>
-        <input type="file" id="photo"  name="photo">
+        <input type="file" id="photo"  name="photo"  value="{{ old('photo', 'storage/'.$user->photo) }}">
         <br>
 
         @if($user->photo)
