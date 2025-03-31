@@ -12,7 +12,7 @@
     @if(session('message'))
         <div style="color: green;">{{ session('message') }}</div>
     @endif
-    <form action="{{ route('korolich_users.update', $user->id) }}" method="POST">
+    <form action="{{ route('korolich_users.update', $user->id) }}" method="POST" enctype="multipart/form-data">
         @csrf
         
         <label for="full_name">ФИО:</label>
@@ -35,7 +35,7 @@
         <input type="text" id="username" name="username" value="{{ old('username', $user->username) }}" required>
         <br>
 
-        <label for="photo">Фото:</label>
+        <label>Фото:</label>
         <input type="file" id="photo"  name="photo">
         <br>
 
