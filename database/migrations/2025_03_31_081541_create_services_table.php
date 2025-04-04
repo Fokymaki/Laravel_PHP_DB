@@ -13,9 +13,7 @@ return new class extends Migration
     {
         Schema::create('services', function (Blueprint $table) {
             $table->id();
-            $table->integer('service_type');
-            $table->integer('payment_type');
-            $table->integer('payment_summ');
+            $table->string('service_name');
             $table->boolean('activity');
         });
     }

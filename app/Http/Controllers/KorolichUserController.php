@@ -76,7 +76,6 @@ class KorolichUserController extends Controller
             Log::info($user);
 
             if ($request->hasFile('photo')) {
-                //dd($request->photo);
                 if($user->photo)
                 {
                     Storage::disk('public') -> delete($user->photo);
